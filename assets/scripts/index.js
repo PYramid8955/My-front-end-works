@@ -59,13 +59,13 @@ function changeVideo() {
 }
 
 window.onload = function () {
-  // initVideos();
-  // changeVideo();
+  initVideos();
+  changeVideo();
   AddReviews()
 
-  // videoInterval = setInterval(() => {
-  //   changeVideo();
-  // }, 5000);
+  videoInterval = setInterval(() => {
+    changeVideo();
+  }, 5000);
 };
 
 let autoStopVideo = () => {
