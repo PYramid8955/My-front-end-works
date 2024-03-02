@@ -1,0 +1,257 @@
+:root {
+  --centerH: 100%;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  background-color: #bbaaff;
+}
+
+#mask {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+#headText {
+  position: absolute;
+  width: 50vw;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  padding: 2rem 2rem 1.25rem 2rem;
+  border: 0 solid transparent;
+  border-radius: 1rem;
+}
+
+#headText>* {
+  position: relative;
+}
+
+#headText::before {
+  content: '';
+  backdrop-filter: blur(4px);
+  width: 100%;
+  height: var(--centerH);
+  top: 0;
+  left: 0;
+  position: absolute !important;
+  background: #00000080;
+  display: block;
+  border: 0 solid transparent;
+  border-radius: 1rem;
+  transition: 200ms linear;
+}
+
+.reviewsBtn {
+  width: fit-content;
+  color: #e7e1ff;
+  cursor: pointer;
+  font-size: .75rem;
+  margin: .75rem auto;
+}
+
+.reviewsBtn:hover {
+  color: #bbaaff;
+}
+
+#headText h1 {
+  margin-bottom: 1rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1rem;
+  margin-top: 1rem;
+  font-weight: bold;
+  border: 2px solid transparent;
+  border-radius: 2rem;
+  background: #bbaaff;
+  cursor: pointer;
+  font-size: 1.1rem;
+  text-decoration: none;
+  color: inherit;
+  transition: 0.15s linear;
+  box-sizing: border-box;
+}
+
+.btn:hover {
+  border: 2px solid #bbaaff;
+  color: #bbaaff;
+  background: white;
+}
+
+#mask>div>h1>b {
+  color: #bbaaff;
+}
+
+video {
+  position: absolute;
+  z-index: 0;
+}
+
+#reviewNest {
+  width: calc(100% - 4.25rem);
+  height: calc(var(--centerH) - 100% - 0.75rem);
+  position: absolute;
+  top: calc(100% - 1rem);
+  left: 2rem;
+  transition: 200ms linear;
+  overflow: hidden;
+}
+
+#beforeMask {
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6.280872722vw;
+  height: 75%;
+  background: linear-gradient(to right, #00000080, transparent);
+  display: block;
+  position: absolute;
+  z-index: 1;
+  cursor: pointer;
+  border: 0;
+  border-radius: 0 1rem 1rem 0;
+}
+
+#afterMask{
+  width: 6.280872722vw;
+  height: 75%;
+  background: linear-gradient(to left, #00000080, transparent);
+  position: absolute;
+  display: block;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  cursor: pointer;
+  border: 0;
+  border-radius: 1rem 0 0 1rem;
+}
+
+#beforeMask:hover {
+  background: linear-gradient(to right, #000000aa, transparent);
+}
+
+#afterMask:hover {
+  background: linear-gradient(to left, #000000aa, transparent);
+}
+
+#reviewList {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  transition: 1s;
+  /* left: -15.219127278vw; don't ask me how I calculated this */
+}
+
+.rcard>* {
+  transition: .5s linear;
+}
+
+.rcard {
+  height: calc(75% - 1.5rem);
+  margin: 2vw;
+  min-width: unset;
+  width: 19.5vw;
+  padding: 0.75rem 1vw;
+  border-radius: 0.75rem;
+  transition: .5s linear;
+  background: #ffffffaa;
+  border: 0;
+  color: #060216;
+  text-align: left;
+  display: grid;
+  grid-template-rows: 1fr 2fr 5fr;
+  grid-template-columns: 4fr 6fr 1fr;
+  grid-template-areas: 'pfp . stars'
+                       'pfp title title'
+                       'pfp text text';
+  overflow: hidden;
+}
+
+.rcard:first-child {
+  margin-left: 0;
+}
+
+.rcard:last-child {
+  margin-right: 0;
+}
+
+.rcard>img {
+  height: 4.5vw;
+  width: 4.5vw;
+  border-radius: 50%;
+  grid-area: pfp;
+  border: 0;
+  display: block;
+  justify-self: center;
+  align-self: center;
+}
+
+.rcard>div {
+  font-size: 1.125rem;
+  color: rgb(216, 216, 28);
+  grid-area: stars;
+  width: fit-content;
+  height: fit-content;
+  justify-self: end;
+  align-self: self-start;
+}
+
+.rcard>h4 {
+  font-size: .9375rem;
+  height: fit-content;
+  grid-area: title;
+  margin: 0 1vw;
+  width: fit-content;
+  align-self: self-start;
+}
+
+.rcard>i {
+  grid-area: text;
+  margin: .5vw 1vw;
+  width: fit-content;
+  align-self: self-start;
+  height: 100%;
+  overflow: hidden;
+}
+
+.rcard[index="1"] {
+  width: 26vw;
+  height: calc(100% - 2rem);
+  border-radius: 1rem;
+  padding: 1rem 1.333333333vw;
+}
+
+.rcard[index="1"]>img {
+  height: 6vw;
+  width: 6vw;
+}
+
+.rcard[index="1"]>div {
+  font-size: 1.5rem;
+}
+
+.rcard[index="1"]>h4 {
+  font-size: 1.25rem;
+}
