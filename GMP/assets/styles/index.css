@@ -79,7 +79,6 @@ body {
   transition: 0.15s linear;
   box-sizing: border-box;
   color: white;
-  margin: 1rem 0;
 }
 
 .primary:hover {
