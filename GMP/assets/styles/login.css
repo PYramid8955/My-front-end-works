@@ -29,7 +29,7 @@ body {
 }
 
 .adaptive-auth {
-  width: calc(50% - 6vw);
+  width: fit-content;
   position: absolute;
   top: 50%;
   left: 25%;
@@ -39,7 +39,7 @@ body {
 
 header {
   display: flex;
-  justify-content: space-between;
+  justify-content: left;
   align-items: center;
   min-height: 4rem;
   background: transparent;
@@ -215,10 +215,11 @@ form.login {
   flex-flow: column;
   margin: auto;
   padding: 2rem;
-  width: 20rem;
+  width: 22rem;
   row-gap: 1rem;
   background: #00000009;
   border-radius: 2rem;
+  box-sizing: border-box;
 }
 
 .dashboard {
@@ -287,4 +288,36 @@ form.login *:focus {
 
 .hidden {
   transform: scaleY(0);
+}
+
+
+@media only screen and (orientation: portrait) {
+  #decor {
+    display: none;
+  }
+  body {
+    background-color: #9277ff;
+  }
+  .adaptive-auth {
+    left: 50%;
+  }
+  form.login {
+    width: 90vw;
+    margin: auto;
+    padding: 6vw;
+    background: var(--background-primary);
+  }
+  footer {
+    font-size: .7rem;
+    color: white;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .secondary {
+    color: white;
+    font-size: .7rem;
+  }
+  .secondary:hover {
+    color: var(--background-tertiary);
+  }
 }
