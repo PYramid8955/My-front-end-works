@@ -11,7 +11,7 @@ const reviewsDATA = [
   {profile: 'Porky', text: 'Interesting...', stars: '&#9733;&#9733;&#9733;&#9733;&#9733;', pfp: 'pfp.png'},
   {profile: 'Joe Jr.', text: 'They\'re fast!', stars: '&#9733;&#9733;&#9733;&#9733;&#9733;', pfp: 'pfp.png'},
   {profile: 'Ashley', text: 'Good!', stars: '&#9733;&#9733;&#9733;&#9733;&#9733;', pfp: 'pfp.png'},
-  {profile: 'Someone', text: 'Didn\'t think I\'d finish my work so fast! Thanks GMP!', stars: '&#9733;&#9733;&#9733;&#9733;&#9733;', pfp: 'pfp.png'},
+  {profile: 'Someone', text: 'Didn\'t think I\'d finish my work so fast! Thanks Name!', stars: '&#9733;&#9733;&#9733;&#9733;&#9733;', pfp: 'pfp.png'},
 ]
 
 let currentIndex = -1;
