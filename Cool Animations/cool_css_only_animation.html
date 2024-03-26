@@ -79,19 +79,51 @@ h1 {
 	box-sizing: border-box;
 	width: 25%;
 	background: #73a1a1;
-	border: .5rem solid transparent;
+	padding: .5rem;
 	border-radius: 1rem;
 	cursor: pointer;
 	color: white;
 	transition: 150ms linear;
+	overflow: hidden;
 }
-.btn:hover {
-	box-shadow: 0 0 10px 0 #73a1a1;
-	
+
+.btn::before {
+	content: '';
+	width: 300%;
+	height: 180%;
+	background: cyan;
+	display: block;
+	position: absolute;
+	left: 50%;
+	top: -180%;
+	transform: translateX(-50%) rotate(0);
+	transition: .1s linear;
 }
+
+.btn::after {
+	content: '';
+	width: 300%;
+	height: 180%;
+	background: cyan;
+	display: block;
+	position: absolute;
+	transform: translateX(-50%) rotate(0);
+	left: 50%;
+	top: 100%;
+	transition: .1s linear;
+}
+
+.btn:hover::after,
+.btn:hover::before {
+	transform: translateX(-50%) rotate(-45deg);
+}
+
+.btn:hover::before { top:-150% }
+
+.btn>span { z-index:1; position: relative; }
 </style>
 </head>
 <body>
-<div id="main"><h1>Do you wanna continue?</h1><div class="btn" id="no">No</div><div class="btn" id="yes">Yes</div></div>
+<div id="main"><h1>Do you wanna continue?</h1><div class="btn" id="no"><span>No</span></div><div class="btn" id="yes"><span>Yes</span></div></div>
 </body>
 </html>

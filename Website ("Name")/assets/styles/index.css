@@ -102,3 +102,93 @@ body {
 .btn:hover {
   transform: scale(1.05);
 }
+
+.infos {
+  display: inline-block;
+  margin-left: .5rem;
+  cursor: default;
+}
+
+footer {
+  color: gray;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+}
+
+footer>.btn {
+  display: inline-block;
+  margin: 0 .5rem;
+  cursor: pointer;
+  font-size: 1.1rem;
+  text-decoration: none;
+  width: fit-content;
+  padding:0;
+  font-weight: normal;
+  border: 0;
+}
+
+footer > .secondary {
+  background: transparent;
+  font-size: .9rem;
+  color: gray;
+}
+
+footer>.secondary:hover {
+  text-decoration: underline;
+  color: rgb(63, 63, 63);
+}
+
+footer>.btn:hover { transform:none }
+
+@media only screen and (orientation: portrait) {
+  footer {
+    font-size: .7rem;
+    color: white;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  footer>.secondary {
+    color: white;
+    font-size: .7rem;
+  }
+  footer>.secondary:hover {
+    color: var(--background-tertiary);
+  }
+  #text_nest {
+    font-size: .9rem;
+    width: calc(100% - 15vw);
+    left: 50%;
+    color: white;
+    padding: 10vw 5vw;
+    background: #00000050;
+    border: 0;
+    border-radius: 1rem;
+  }
+  #text_nest > h1 {
+    font-size: 2.1rem;
+  }
+  #face_image {
+    border-radius: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--accent);
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.7;
+    left: 50%;
+    box-shadow: none;
+  }
+  body {
+    background: #000;
+  }
+  .secondary {
+    font-size: .9rem;
+    color: #e3e3e3;
+  }
+  .secondary:hover {
+    text-decoration: underline;
+    color: #b9b9b9;
+  }
+}
