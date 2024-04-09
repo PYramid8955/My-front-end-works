@@ -1,0 +1,33 @@
+html {
+  font-size: 18px;
+}
+
+body {
+  background: black;
+}
+
+body::before {
+  content: '';
+  height: .05rem;
+  background: white;
+  width: 0;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  animation: rightGlowing 5s linear infinite; /*rm infinite in the end, or set a delay*/
+}
+
+@keyframes rightGlowing {
+  0% {
+    left: 0%;
+    width: 0;
+  }
+  50% {
+    left: calc(50% - 2rem);
+    width: 4rem;
+  }
+  100% {
+    left: 100%;
+    width: 0;
+  }
+}
