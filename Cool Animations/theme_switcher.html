@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.switcher {
+    width: 0;
+    height: 20px;
+    border-left: 50px solid black;
+    border-right: 50px solid #555;
+    border-bottom: 40px solid #555;
+    border-top: 40px solid black;
+    transition: 500ms linear;
+    border-radius: 50%;
+    transform: rotate(0deg);
+    cursor: pointer;
+}
+.switcher:hover {
+	height: 0;
+    border-bottom: 50px solid #555;
+    border-top: 50px solid black;
+    transform: rotate(540deg);
+}
+</style>
+</head>
+<body>
+<div class="switcher"></div>
+
+</body>
+</html> 
