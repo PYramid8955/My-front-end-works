@@ -1,0 +1,259 @@
+:root {
+    --pyr-inclination: 0;
+  }
+  
+  body {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black
+  }
+  
+  .scene {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    background: transparent;
+    perspective: 200px;
+  }
+  
+  .rotate {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transform: translateZ(-300px)  rotateX(var(--pyr-inclination));
+  }
+  
+  .shadow {
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 50%;
+    left: 50%;
+    box-shadow: 0 0 100px 70px white;
+  }
+  
+  .pyramid {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateY(0deg) rotateX(0);
+    transition: 1s;
+    animation: rotate 8s linear infinite;
+  }
+  
+  .face {
+    transform-origin: top center;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    transition: .25s linear;
+  }
+  
+  .front {
+    transform: rotateY(45deg) rotateX(35.21deg);
+    border-bottom: calc(200px * .866) solid #dd0;
+    animation: front 8s linear infinite;
+  }
+  
+  .pyramid:hover>.front {
+    transform: translateY(-20px) rotateY(45deg) rotateX(35.21deg);
+  }
+  
+  .back {
+    transform: rotateY(225deg) rotateX(35.21deg);
+    border-bottom: calc(200px * .866) solid #dd0;
+    animation: back 8s linear infinite;
+  }
+  
+  .pyramid:hover>.back {
+    transform: translateY(-20px) rotateY(225deg) rotateX(35.21deg);
+  }
+  
+  .left {
+    transform: rotateY(-45deg) rotateX(35.21deg); /*knowing all the sides I easily found the angle of inclination*/
+    border-bottom: calc(200px * .866) solid #dd0;
+    animation: left 8s linear infinite;
+  }
+  
+  .pyramid:hover>.left {
+    transform: translateY(-20px) rotateY(-45deg) rotateX(35.21deg);
+  }
+  
+  .right {
+    transform: rotateY(135deg) rotateX(35.21deg);
+    border-bottom: calc(200px * .866) solid #dd0;
+    animation: right 8s linear infinite;
+  }
+  
+  .pyramid:hover>.right {
+    transform: translateY(-20px) rotateY(135deg) rotateX(35.21deg);
+  }
+  
+  .base {
+    position: absolute;
+    transform-origin: center center;
+    width: 200px;
+    height: 200px;
+    transform: rotateY(45deg) translateY(-50%) rotateX(-90deg) translateZ(141.415133561px);
+    background: #880;
+    transition: .25s linear;
+  }
+  
+  .pyramid:hover>.b {
+    transform: rotateY(45deg) translateY(-50%) rotateX(-90deg) translateZ(121.415133561px);
+  }
+  
+  @keyframes rotate {
+    from {
+      transform: rotateY(0) rotateX(0)
+    } to {
+      transform: rotateY(-360deg) rotateX(0)
+    }
+  }
+  
+  @keyframes right {
+    0% {
+      border-bottom-color: #330
+    } 12.5% {
+      border-bottom-color: #330
+    } 62.5% {
+      border-bottom-color: #dd0
+    } 100% {
+      border-bottom-color: #330
+    }
+  }
+  @keyframes back {
+    0% {
+      border-bottom-color: #330
+    } 37.5% {
+      border-bottom-color: #330
+    } 87.5% {
+      border-bottom-color: #dd0
+    } 100% {
+      border-bottom-color: #330
+    }
+  }
+  
+  @keyframes left {
+    0% {
+      border-bottom-color: rgb(178.5, 178.5, 0)
+    } 12.5% {
+      border-bottom-color: #dd0
+    } 62.5% {
+      border-bottom-color: #333
+    } 100% {
+      border-bottom-color: rgb(178.5, 178.5, 0)
+    }
+  }
+  
+  @keyframes front {
+    0% {
+      border-bottom-color: rgb(93.5, 93.5, 0)
+    } 37.5% {
+      border-bottom-color: #dd0
+    } 87.5% {
+      border-bottom-color: #330
+    } 100% {
+      border-bottom-color: rgb(93.5, 93.5, 0)
+    }
+  }
+  
+  .tface {
+    transform-origin: top center;
+    position: absolute;
+    width: 200px;
+    height: 0;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    transition: .25s linear;
+  }
+  
+  .fr {
+    transform: translateX(-100px) translateY(141.415133561px) rotateY(45deg) translateZ(100px) rotateX(35.21deg);
+    border-bottom: calc(200px * .866) solid black;
+    animation: fr 8s linear infinite;
+  }
+  
+  .tb {
+    background: #111;
+  }
+  
+  .ba {
+    transform: translateX(-100px) translateY(141.415133561px) rotateY(225deg) translateZ(100px) rotateX(35.21deg);
+    border-bottom: calc(200px * .866) solid black;
+    animation: ba 8s linear infinite;
+  }
+  
+  .le {
+    transform: translateX(-100px) translateY(141.415133561px) rotateY(-45deg) translateZ(100px) rotateX(35.21deg);
+    border-bottom: calc(200px * .866) solid black;
+    animation: le 8s linear infinite;
+  }
+  
+  .ri {
+    transform: translateX(-100px) translateY(141.415133561px) rotateY(135deg) translateZ(100px) rotateX(35.21deg);
+    border-bottom: calc(200px * .866) solid black;
+    animation: ri 8s linear infinite;
+  }
+  
+  .B {
+    width: 400px;
+    height: 400px;
+    transform: translateX(calc(-50% + 100px)) rotateY(45deg) translateY(-50%) rotateX(-90deg) translateZ(282.830267122px);
+    transition: .25s linear;
+  }
+  
+  @keyframes ri {
+    0% {
+      border-bottom-color: #000
+    } 12.5% {
+      border-bottom-color: #000
+    } 62.5% {
+      border-bottom-color: #222
+    } 100% {
+      border-bottom-color: #000
+    }
+  }
+  @keyframes ba {
+    0% {
+      border-bottom-color: #000
+    } 37.5% {
+      border-bottom-color: #000
+    } 87.5% {
+      border-bottom-color: #222
+    } 100% {
+      border-bottom-color: #000
+    }
+  }
+  
+  @keyframes le {
+    0% {
+      border-bottom-color: rgb(25.5, 25.5, 25.5)
+    } 12.5% {
+      border-bottom-color: #222
+    } 62.5% {
+      border-bottom-color: #000
+    } 100% {
+      border-bottom-color: rgb(25.5, 25.5, 25.5)
+    }
+  }
+  
+  @keyframes fr {
+    0% {
+      border-bottom-color: rgb(8.5, 8.5, 8.5)
+    } 37.5% {
+      border-bottom-color: #222
+    } 87.5% {
+      border-bottom-color: #000
+    } 100% {
+      border-bottom-color: rgb(8.5, 8.5, 8.5)
+    }
+  }
