@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+h2 {
+	display: flex
+}
+span {
+	background:transparent;
+	cursor: default;
+	outline:0;
+}
+@keyframes color {
+	0% {background:transparent}
+	25% {background:blue}
+	50% {background:green}
+	75% {background:red}
+	100% {background:yellow}
+}
+</style>
+</head>
+<body>
+
+<h2>
+<span>H</span>
+<span>o</span>
+<span>v</span>
+<span>e</span>
+<span>r</span>
+<span>&nbsp;</span>
+<span>Y</span>
+<span>o</span>
+<span>u</span>
+<span>r</span>
+<span>&nbsp;</span>
+<span>M</span>
+<span>o</span>
+<span>u</span>
+<span>s</span>
+<span>e</span>
+</h2>
+<script>
+let spans = document.querySelectorAll('span');
+for (span of spans) {
+	span.addEventListener('mouseover', (e) => {console.log(e.target); e.target.style.animation = 'color 3s infinite'});
+}
+</script>
+
+</body>
+</html> 
+
